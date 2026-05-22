@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
               label: "Classes",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.dashboard),
               label: "Overview",
             ),
           ],
