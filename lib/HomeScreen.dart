@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: const Text("School Manager"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
@@ -113,9 +113,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: ElevatedButton(
                             onPressed: addStudent,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
+                              backgroundColor: Colors.deepPurple,
                             ),
-                            child: const Text("Add"),
+                            child: const Text("Add",style: TextStyle(color: Colors.white),),
                           ),
                         ),
                         const SizedBox(width: 10),
