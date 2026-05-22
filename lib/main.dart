@@ -51,6 +51,9 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.blue,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white70,
           currentIndex: currentIndex,
           onTap: (index) {
             setState(() {
