@@ -18,7 +18,11 @@ class OverviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("School Manager")),
+      appBar: AppBar(
+        title: const Text("School Manager"),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -31,7 +35,11 @@ class OverviewScreen extends StatelessWidget {
                     color: Colors.blue.shade100,
                     child: Column(
                       children: [
-                        Text("${students.length}", style: const TextStyle(fontSize: 24)),
+                        Text(
+                          "${students.length}",
+                          style: const TextStyle(fontSize: 24),
+                        ),
+                        const SizedBox(height: 5),
                         const Text("Students"),
                       ],
                     ),
@@ -44,7 +52,11 @@ class OverviewScreen extends StatelessWidget {
                     color: Colors.green.shade100,
                     child: Column(
                       children: [
-                        Text("${classes.length}", style: const TextStyle(fontSize: 24)),
+                        Text(
+                          "${classes.length}",
+                          style: const TextStyle(fontSize: 24),
+                        ),
+                        const SizedBox(height: 5),
                         const Text("Classes"),
                       ],
                     ),
@@ -52,18 +64,30 @@ class OverviewScreen extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: 20),
+
+            const Divider(
+              thickness: 1,
+            ),
+
+            const SizedBox(height: 10),
+
             Expanded(
               child: ListView(
                 children: classes.map((c) {
                   final count = countStudents(c);
-                  return ListTile(
-                    title: Text(c),
-                    trailing: Text("$count"),
+
+                  return Card(
+                    child: ListTile(
+                      leading: const Icon(Icons.book),
+                      title: Text(c),
+                      trailing: Text("$count"),
+                    ),
                   );
                 }).toList(),
               ),
-            )
+            ),
           ],
         ),
       ),
